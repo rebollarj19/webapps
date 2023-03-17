@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: darkred;
+        color: #fff;
+        padding: 10px;
+      }
+
+      .logo {
+        margin-left: 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 20px;
+        width: 100%; /* added */
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%; 
+        justify-content: space-between; 
+      }
+
+      nav li {
+        margin: 0 10px;
+        flex: 1;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      nav li a img {
+        max-height: 30px;
+        max-width: 30px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      var chart;
+      var data;
+      var options;
+      var num_human = 3;
+      var num_vampire = 2;
+
+      function drawChart() {
+        // data?
+        data = new google.visualization.DataTable();
+        data.addColumn('string', 'Element');
+        data.addColumn('number', 'Number');
+        data.addRows([
+          ['Human', num_human],
+          ['Vampire', num_vampire]
+        ]);
+
+        options = {'title':'How many vampires in the class?',
+                       'width':600,
+                       'height':400};
+
+        chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html"><img src="homebutton.png" alt="Home"></a></li>
+          <li><a href="add_student.html">Add Student</a></li>
+          <li><a href="table.html">Table</a></li>
+          <li><a href="graph.html">Graph</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Graph</h1>
+      <p>See graph here:</p>
+      <div id="chart_div"></div>
+    </main>
+  </body>
+</html>

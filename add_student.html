@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: darkred;
+        color: #fff;
+        padding: 10px;
+      }
+
+      .logo {
+        margin-left: 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 20px;
+        width: 100%; /* added */
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%; 
+        justify-content: space-between; 
+      }
+
+      nav li {
+        margin: 0 10px;
+        flex: 1;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      nav li a img {
+        max-height: 30px;
+        max-width: 30px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function output_user_info() {
+        // selectObject.selectedIndex => Return the selectedIndex property (starting from 0)
+        // selectObject.selectedIndex = number => Set the selectedIndex property
+        // selectObject.options => Return the option (contents)
+        
+        // hole is here
+        var name = document.getElementById("first_name").value;
+        
+        //quialities
+        var garlic;
+        if(document.getElementById('garlic_checkbox').checked) {
+          garlic = 0;
+        }
+        if(document.getElementById('no_garlic_checkbox').checked) {
+          garlic = 3;
+        }
+
+        var shadow;
+        if(document.getElementById('shadow_checkbox').checked) {
+          shadow = 0;
+        }
+        if(document.getElementById('no_shadow_checkbox').checked) {
+          shadow = 4;
+        }
+
+        var pale;
+        if(document.getElementById('pale_checkbox').checked) {
+          pale = 3;
+        }
+        if(document.getElementById('no_pale_checkbox').checked) {
+          pale = 0;
+        }
+
+        var accent;
+        if(document.getElementById('accent_checkbox').checked) {
+          accent = 4;
+        }
+        if(document.getElementById('no_accent_checkbox').checked) {
+          accent = 0;
+        }
+
+
+        //total score
+        var total_score = shadow + garlic + pale + accent;
+        var vampire;
+        if (total_score > 6) {
+          vampire = "a vampire";
+        } else {
+          vampire = "not a vampire";
+        }
+
+      window.alert("Student: " + name + " is " + vampire);
+
+      }
+    </script>
+
+
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html"><img src="homebutton.png" alt="Home"></a></li>
+          <li><a href="add_student.html">Add Student</a></li>
+          <li><a href="table.html">Table</a></li>
+           <li><a href="graph.html">Graph</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Add a new Student</h1>
+      <p>Please fill out the following information on New Student</p>
+
+
+      <div class="container">
+        <form>
+          <div class="form-row">
+            <!-- md is short for Medium, >= 768 px -->
+            <div class="form-group col-md-4">
+              <label for="first_name">First Name</label>
+              <!-- possible types:  text, password, datetime, datetime-local, date, month, time, week, number, email, url, search, tel, and color. -->
+              <input type="text" class="form-control" id="first_name" placeholder="First Name">
+              <!-- <input type="time" class="form-control" id="first_name" placeholder="First Name"> -->
+              <!-- <input type="color" class="form-control" id="first_name" placeholder="First Name"> -->
+            </div>
+      
+          <div class="form-row">
+            <!-- without this, your rows will not be aligned -->
+            <div class="form-group col-md-12">
+              <div class="radio">
+                <label for="mySelect">Does this student like Garlic?</label>
+                <label for="mySelect"><input type="radio" name="garlic_radio" id="garlic_checkbox">Yes</label>
+                <label for="mySelect"><input type="radio" name="garlic_radio" id="no_garlic_checkbox">No</label>
+                
+              </div>
+
+              <div class="radio">
+                <label for="mySelect">Does this student have a Shadow?</label>
+                <label for="mySelect"><input type="radio" name="shadow_radio" id="shadow_checkbox">Yes</label>
+                <label for="mySelect"><input type="radio" name="shadow_radio" id="no_shadow_checkbox">No</label>
+              </div>
+              
+              <div class="radio">
+                <label for="mySelect">Does this student have a pale complexion?</label>
+                <label for="mySelect"><input type="radio" name="pale_radio" id="pale_checkbox">Yes</label>
+                <label for="mySelect"><input type="radio"  name="pale_radio" id="no_pale_checkbox">No</label>
+              </div>
+
+              <div class="radio">
+                <label for="mySelect">Does this student have an accent?</label>
+                <label for="mySelect"><input type="radio" name="accent_radio" id="accent_checkbox">Yes</label>
+                <label for="mySelect"><input type="radio"  name="accent_radio" id="no_accent_checkbox">No</label>
+              </div>
+
+            </div>
+          </div>
+      
+        </form>
+      
+        <!-- How to display all user input information as a paragraph? Finish the output_user_info function -->
+        <button class="btn btn-primary" onclick="output_user_info()">Submit</button>
+        
+        <p id="user_info"></p>
+      </div>
+
+
+     
+
+
+    </main>
+  </body>
+</html>

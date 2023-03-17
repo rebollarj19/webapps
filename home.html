@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: darkred;
+        color: #fff;
+        padding: 10px;
+      }
+
+      .logo {
+        margin-left: 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 20px;
+        width: 100%; /* added */
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%; 
+        justify-content: space-between; 
+      }
+
+      nav li {
+        margin: 0 10px;
+        flex: 1;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      nav li a img {
+        max-height: 30px;
+        max-width: 30px;
+      }
+
+      main {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html"><img src="homebutton.png" alt="Home"></a></li>
+          <li><a href="add_student.html">Add Student</a></li>
+          <li><a href="table.html">Table</a></li>
+           <li><a href="graph.html">Graph</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Vampire Checker!</h1>
+      <p>Welcome to our website. Please read the following instructions to find out if your classmate is really a vampire!</p>
+      <p>Select <b>"Add Student"</b> tab to add a student and input thier given characteristics. Results are displayed in Table or Graph tabs.
+      <br>Select <b>"Table"</b> tab to view the list of students who are and are not classified as vampires.
+      <br>Select <b>"Graph"</b> tab to view students who are classified as vampires or humans in Graph form. 
+      </p>
+    </main>
+  </body>
+</html>
